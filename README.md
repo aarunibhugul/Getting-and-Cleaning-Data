@@ -58,12 +58,10 @@
 >
 
 =======================================================================================
-## My Work to this project: the instruction list to reproduce the tidy data set
+### Aim: R script to reproduce the tidy data set
 
-### Obtain the raw data sets and put them in the working directory (via Rstudio)
+### Obtain the raw data sets and put them in the current working directory
 
- * The following steps were performed in a PC running the operation system Window 8.1.
-   The data cleaning processes were performed in Rstudio with R version 3.1.0
      
    + download the raw data from the following website:
       https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -108,42 +106,28 @@
     + There are 5 main steps in run_analysis.R to process the raw data sets and create the tidy data set.
     
   
-         Step-1: Merges the training and the test data sets to create one data set (such as):
-              Load and read the input raw sets; merge three pairs data set (e.g.: X_train.txt, X_test.txt;
+         Step 1: Merging the training and the test data frame to create one data frame :
+              Load and read the input sets; merge 3 pairs data set (e.g.: X_train.txt, X_test.txt;
               y_train.txt, y_test.txt; subject_train.txt, subject_text.txt) into three single data set
-              via "rbind" function.
+              using "rbind" function.
             
-         Setp-2: Extracts only the measurements on the mean and standard deviation for each measurement.
+         Setp 2: Extracting the measurements of the mean and standard deviation for each measurement.
               This step is mainly done by the "grep" function by providing the key search patterns
               "-mean\\(\\)|-std\\(\\)".
-            
-              ++ column names from the data sets were changed into lower-case to avoid any uncessary typos
-               (based on the intruction from the "Week4 slide-notes: Editing Text Variables" from 
-               Coursera course Getting and Cleaning Data); characters "()" were replaced "" and
-               characters "-" was replaced to "." via "gsub" function.
+          
                
          Step-3: Uses descriptive activity names to name the activities in the data set.
               This step is mainly to produce a one-column data frame called "joinlabel" containing
               descriptive activity names.
             
-         Step-4: Appropriately labels the data set with descriptive activity names.
-              The step is mainly to combine three joined data frames into one data frame called
-              "cleandata". This is the first cleaned data frame toward to the final tidy data set.
-              An (optional/temporary) output file is created called "combinedcleandata.txt" just in case
-              for an emergency.
+         Step-4: Appropriately labels the data frame with descriptive activity names.
+              The step is to combine three joined data frames into one data frame called
+              "cleandata". 
+              
             
          Step-5: Creates a second, independent tidy data set with the average of each variable
               for each activity and each subject.
               
-              + It is necessary to install and to load the package "reshape2" before to perform
-              any processes.
-              
-              + The final tidy data frame called "tidydfrm" via "melt" function and then "dcast" function.
-            
-              + Finally, a file called "tidy_average_data.txt" was created via "write.table" function.
-                This is the final output tidy processed data.
-              
-              + The detailed description of the "tidy_average_data.txt" and the given raw data set
-                are in "CodeBook.md" file.
+
             
 ===================================================================================================

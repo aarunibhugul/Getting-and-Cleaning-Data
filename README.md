@@ -78,7 +78,7 @@
       
 
         
-### Create a tidy_data	file via a R script named run_analysis.R
+### Creating a tidy_data file using a R script : run_analysis.R
       
  * Preparation:  data sets and script
     + The data sets and run_analysis.R must be in the working directory.
@@ -114,7 +114,6 @@
          Setp 2: Extracting the measurements of the mean and standard deviation for each measurement.
               This step is mainly done by the "grep" function by providing the key search patterns
               "-mean\\(\\)|-std\\(\\)".
-          
                
          Step-3: Uses descriptive activity names to name the activities in the data set.
               This step is mainly to produce a one-column data frame called "joinlabel" containing
